@@ -5,30 +5,41 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/css/bootstrap-theme.css'
 
-const Hello = props => (
-	<div>
-  	<iframe
-      src="http://player.twitch.tv/?channel=sayeedblack"
-      scrolling="true"
-      height="500"
-      width="500"
-      allowfullscreen="true">
-  	</iframe>
-  	</div>
-)
-
-Hello.defaultProps = {
-  name: 'David'
-}
-
-Hello.propTypes = {
-  name: PropTypes.string
+export default class Hello extends React.Component {
+  constructor(props, _railsContext) {
+    super(props);
+    this.state={name:'sheriffeli'};
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange(newName) {
+    this.setState({name:newName.target.value})
+  }
+  render() {
+    return (
+      <div class='row'>
+        <div>
+          <input type="text" value={this.state.name} autofocus="autofocus" onChange={this.handleChange} />
+        </div>
+        <div>
+          <iframe
+            src={"http://player.twitch.tv/?channel="+this.state.name}
+            scrolling="true"
+            height="500"
+            width="500"
+            allowfullscreen="true">
+          </iframe>
+        </div>
+      </div>
+    );
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <Hello name="React" />,
+    <Hello name = "eulcs1" />,
     document.getElementById('hello-react')
   )
 })

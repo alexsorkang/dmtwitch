@@ -1,7 +1,7 @@
 <div class="container">
+  <%= javascript_pack_tag 'hello_react' %>
+  <%= javascript_pack_tag 'hello_react1' %>
   <div class="row">
-    <%= javascript_pack_tag 'hello_react' %>
-    <%= javascript_pack_tag 'hello_react1' %>
     <%= content_tag :div,
       id: "hello-react",
       data: {
@@ -9,6 +9,8 @@
         name: 'David'
     }.to_json do %>
     <% end %>
+  </div>
+  <div class='row'>
     <%= content_tag :div,
       id: "hello-react1",
       data: {
