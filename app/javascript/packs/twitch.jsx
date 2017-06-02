@@ -8,7 +8,7 @@ import PropTypes from 'prop-types'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/css/bootstrap-theme.css'
 
-export default class Hello extends React.Component {
+export default class Twitch extends React.Component {
   constructor(props, _railsContext) {
     super(props);
     this.state={name:'sheriffeli'};
@@ -19,11 +19,11 @@ export default class Hello extends React.Component {
   }
   render() {
     return (
-      <div class='row'>
-        <div>
+      <div className={"col-md-4 " + this.props.className}>
+        <div className='row'>
           <input type="text" value={this.state.name} autofocus="autofocus" onChange={this.handleChange} />
         </div>
-        <div>
+        <div className='row'>
           <iframe
             src={"http://player.twitch.tv/?channel="+this.state.name}
             scrolling="true"
@@ -39,7 +39,7 @@ export default class Hello extends React.Component {
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <Hello name = "eulcs1" />,
-    document.getElementById('hello-react')
+    <Twitch/>,
+    document.getElementById("outerContainer")
   )
 })

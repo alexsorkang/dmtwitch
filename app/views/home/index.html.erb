@@ -1,54 +1,39 @@
-<div class="container">
-  <%= javascript_pack_tag 'hello_react' %>
-  <%= javascript_pack_tag 'hello_react1' %>
-  <div class="row">
-    <%= content_tag :div,
-      id: "hello-react",
-      data: {
-        message: 'Hello!',
-        name: 'David'
-    }.to_json do %>
-    <% end %>
-  </div>
-  <div class='row'>
-    <%= content_tag :div,
-      id: "hello-react1",
-      data: {
-        message: 'Hello!',
-        name: 'David'
-    }.to_json do %>
-    <% end %>
-  </div>
+
+<%= javascript_pack_tag 'container' %>
+<!-- <div class="row"> -->
+<!-- </div> -->
+<!-- <div class='row'> -->
+<!-- </div> -->
+
 <!--   <div class="row">
-    <div class="col-md-6">    
-      <iframe
-          src="http://player.twitch.tv/?channel=disguisedtoasths"
-          scrolling="true"
-          height="500"
-          width="500"
-          allowfullscreen="true">
-      </iframe>
+  <div class="col-md-6">    
+    <iframe
+        src="http://player.twitch.tv/?channel=disguisedtoasths"
+        scrolling="true"
+        height="500"
+        width="500"
+        allowfullscreen="true">
+    </iframe>
 
 
 
-    </div>
-    <div class="col-md-6">
-      <iframe
-          src="http://player.twitch.tv/?channel=sheriffeli"
-          scrolling="true"
-          height="500"
-          width="500"
-          allowfullscreen="true">
-      </iframe>
-
-    </div>
   </div>
- -->
-<!-- <iframe frameborder="0" 
-        scrolling="no" 
-        id="chat_embed" 
-        src="http://www.twitch.tv/disguisedtoasths/chat" 
-        height="500" 
-        width="350">
-</iframe> -->
+  <div class="col-md-6">
+    <iframe
+        src="http://player.twitch.tv/?channel=sheriffeli"
+        scrolling="true"
+        height="500"
+        width="500"
+        allowfullscreen="true">
+    </iframe>
+
+  </div>
 </div>
+-->
+<!-- <iframe frameborder="0" 
+      scrolling="no" 
+      id="chat_embed" 
+      src="http://www.twitch.tv/disguisedtoasths/chat" 
+      height="500" 
+      width="350">
+</iframe> -->

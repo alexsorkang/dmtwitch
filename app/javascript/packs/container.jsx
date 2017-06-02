@@ -7,39 +7,38 @@ import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/css/bootstrap-theme.css'
+import Twitch from './twitch.jsx'
+import LeftNav from './left_nav.jsx'
+import RightNav from './right_nav.jsx'
 
-export default class Hello extends React.Component {
+export default class Container extends React.Component {
   constructor(props, _railsContext) {
     super(props);
-    this.state={name:''};
-    this.handleChange = this.handleChange.bind(this);
+    // this.state={name:''};
+    // this.handleChange = this.handleChange.bind(this);
   }
   handleChange(newName) {
     this.setState({name:newName.target.value})
   }
   render() {
     return (
-      <div class='row'>
-        <div>
-          <input type="text" value={this.state.name} autofocus="autofocus" onChange={this.handleChange} />
-        </div>
-        <div>
-          <iframe
-            src={"http://player.twitch.tv/?channel="+this.state.name}
-            scrolling="true"
-            height="500"
-            width="500"
-            allowfullscreen="true">
-          </iframe>
-        </div>
+      // <div className="container">
+      <div id="outerContainer" className="row">
+      {this.props.children}
       </div>
+      // </div>
     );
   }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <Hello name = "eulcs1" />,
-    document.getElementById('hello-react1')
+    <Container>
+      <LeftNav/>
+      <Twitch className="twitch_0"/>
+      <Twitch className="twitch_1"/>
+      <RightNav/>
+    </Container>,
+    document.body
   )
 })
