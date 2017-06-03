@@ -21,12 +21,16 @@ export default class Container extends React.Component {
     this.setState({name:newName.target.value})
   }
   render() {
+    const children = this.props.children
+    console.log(React.Children.count(children)-1)
     return (
-      // <div className="container">
       <div id="outerContainer" className="row">
-      {this.props.children}
+        {React.Children.map(children, (child, i) => {
+          // if (i < 1) return
+          // if (i < React.Children.count(children)-1) return
+          return child
+        })}
       </div>
-      // </div>
     );
   }
 }
@@ -35,10 +39,10 @@ document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
     <Container>
       <LeftNav/>
-      <Twitch className="twitch_0"/>
-      <Twitch className="twitch_1"/>
+      <Twitch className="twitch_0" streamName='sheriffeli' />
+      <Twitch className="twitch_1" streamName='greekgodx' />
       <RightNav/>
     </Container>,
-    document.body
+    document.getElementById("mainContainer")
   )
 })

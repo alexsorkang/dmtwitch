@@ -11,7 +11,7 @@ import 'bootstrap/dist/css/bootstrap-theme.css'
 export default class Twitch extends React.Component {
   constructor(props, _railsContext) {
     super(props);
-    this.state={name:'sheriffeli'};
+    this.state={name:this.props.streamName};
     this.handleChange = this.handleChange.bind(this);
   }
   handleChange(newName) {
