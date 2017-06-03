@@ -25,7 +25,7 @@ export default class Twitch extends React.Component {
         </div>
         <div className='row'>
           <iframe
-            src={"http://player.twitch.tv/?channel="+this.state.name}
+            src={"http://player.twitch.tv/?channel="+this.props.streamName}
             scrolling="true"
             height="500"
             width="500"

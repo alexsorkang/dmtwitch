@@ -8,10 +8,11 @@ export default class LeftNav extends React.Component {
   constructor(props, _railsContext) {
     super(props);
     this.state={name:'sheriffeli'};
-    // this.handleChange = this.handleChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
   handleChange(newName) {
     this.setState({name:newName.target.value})
+    this.props.callbackParent(newName.target.value)
   }
   render() {
     return (
