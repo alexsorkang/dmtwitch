@@ -14,7 +14,7 @@ import RightNav from './right_nav.jsx'
 export default class Container extends React.Component {
   constructor(props, _railsContext) {
     super(props);
-    this.state={name:'sheriffeli'};
+    this.state={name:'sheriffeli',twitch_0:'',twitch_1:'',twitch_2:'',twitch_3:''};
     this.handleChange = this.handleChange.bind(this);
     this.onChildChanged = this.onChildChanged.bind(this);
   }
@@ -22,7 +22,7 @@ export default class Container extends React.Component {
     this.setState({name:newName.target.value})
   }
   onChildChanged(newStream) {
-    this.setState({name:newStream})
+    this.setState(newStream)
   }
   render() {
     const children = this.props.children
@@ -33,7 +33,8 @@ export default class Container extends React.Component {
             return React.cloneElement(child, { callbackParent: this.onChildChanged })
           }
           if (child.type === Twitch) {
-            return React.cloneElement(child, { streamName: this.state.name })
+            var twitch_name = "twitch_" + (i - 1)
+            return React.cloneElement(child, { streamName: this.state[twitch_name] })
           }
           if (child.type === RightNav) {
             return React.cloneElement(child, { streamName: this.state.name })

@@ -12,17 +12,14 @@ export default class Twitch extends React.Component {
   constructor(props, _railsContext) {
     super(props);
     this.state={name:this.props.streamName};
-    this.handleChange = this.handleChange.bind(this);
+    // this.handleChange = this.handleChange.bind(this);
   }
-  handleChange(newName) {
-    this.setState({name:newName.target.value})
-  }
+  // handleChange(newName) {
+  //   this.setState({name:newName.target.value})
+  // }
   render() {
     return (
       <div className={"col-md-4 " + this.props.className}>
-        <div className='row'>
-          <input type="text" value={this.state.name} autofocus="autofocus" onChange={this.handleChange} />
-        </div>
         <div className='row'>
           <iframe
             src={"http://player.twitch.tv/?channel="+this.props.streamName}
