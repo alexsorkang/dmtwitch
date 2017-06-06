@@ -14,6 +14,8 @@ export default class Twitch extends React.Component {
     this.state={name:this.props.streamName};
   }
   render() {
+    console.log(this.props)
+    if (this.props.streamNo < this.props.twitchCount) {
     return (
       <div className={"col-md-4 " + this.props.className}>
         <div className='row'>
@@ -21,13 +23,13 @@ export default class Twitch extends React.Component {
             className='twitchFrame'
             src={"http://player.twitch.tv/?channel="+this.props.streamName}
             scrolling="true"
-            height='600'
-            width='700'
             >
           </iframe>
         </div>
       </div>
-    );
+    )} else {
+      return null
+    };
   }
 }
 
