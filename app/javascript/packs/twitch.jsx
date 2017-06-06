@@ -5,28 +5,25 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap/dist/css/bootstrap-theme.css'
+// import 'bootstrap/dist/css/bootstrap.css'
+// import 'bootstrap/dist/css/bootstrap-theme.css'
 
 export default class Twitch extends React.Component {
   constructor(props, _railsContext) {
     super(props);
     this.state={name:this.props.streamName};
-    // this.handleChange = this.handleChange.bind(this);
   }
-  // handleChange(newName) {
-  //   this.setState({name:newName.target.value})
-  // }
   render() {
     return (
       <div className={"col-md-4 " + this.props.className}>
         <div className='row'>
           <iframe
+            className='twitchFrame'
             src={"http://player.twitch.tv/?channel="+this.props.streamName}
             scrolling="true"
-            height="500"
-            width="500"
-            allowfullscreen="true">
+            height='600'
+            width='700'
+            >
           </iframe>
         </div>
       </div>

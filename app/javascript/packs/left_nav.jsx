@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap/dist/css/bootstrap-theme.css'
+// import 'bootstrap/dist/css/bootstrap.css'
+// import 'bootstrap/dist/css/bootstrap-theme.css'
 
 export default class LeftNav extends React.Component {
   constructor(props, _railsContext) {
@@ -30,11 +30,11 @@ export default class LeftNav extends React.Component {
   }
   render() {
     return (
-      <div className="col-md-2">
-        <input id="twitch_0" type="text" value={this.state.twitch_0} autofocus="autofocus" onChange={this.handleChange} />
-        <input id="twitch_1" type="text" value={this.state.twitch_1} autofocus="autofocus" onChange={this.handleChange} />
-        <input id="twitch_2" type="text" value={this.state.twitch_2} autofocus="autofocus" onChange={this.handleChange} />
-        <input id="twitch_3" type="text" value={this.state.twitch_3} autofocus="autofocus" onChange={this.handleChange} />
+      <div className="col-md-2 form-group">
+        <input id="twitch_0" className="form-control" type="text" value={this.state.twitch_0} onChange={this.handleChange} />
+        <input id="twitch_1" className="form-control" type="text" value={this.state.twitch_1} onChange={this.handleChange} />
+        <input id="twitch_2" className="form-control" type="text" value={this.state.twitch_2} onChange={this.handleChange} />
+        <input id="twitch_3" className="form-control" type="text" value={this.state.twitch_3} onChange={this.handleChange} />
       </div>
     );
   }
