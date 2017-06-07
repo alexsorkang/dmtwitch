@@ -30,7 +30,7 @@ export default class LeftNav extends React.Component {
   }
   render() {
     return (
-      <div className="col-md-2 form-group">
+      <div className="form-group">
         <input id="twitch_0" className="form-control" type="text" value={this.state.twitch_0} onChange={this.handleChange} />
         <input id="twitch_1" className="form-control" type="text" value={this.state.twitch_1} onChange={this.handleChange} />
         <input id="twitch_2" className="form-control" type="text" value={this.state.twitch_2} onChange={this.handleChange} />
