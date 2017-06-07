@@ -43,20 +43,17 @@ export default class Container extends React.Component {
   }
   render() {
     const children = this.props.children
+    const childArray = React.Children.toArray(children)
+    const twitchArr = childArray.slice(1,-1)
     return (
       <div id="outerContainer" className="row">
-        {React.Children.map(children, (child, i) => {
-          if (child.type === LeftNav) {
-            return React.cloneElement(child, { callbackParent: this.onChildChanged })
-          }
-          if (child.type === Twitch) {
-            var twitch_name = "twitch_" + (i - 1)
-            return React.cloneElement(child, { twitchCount: this.twitchCount(), streamNo: i-1, streamName: this.state[twitch_name] })
-          }
-          if (child.type === RightNav) {
-            return React.cloneElement(child, { streamName: this.state.name })
-          }
-        })}
+        {React.cloneElement(childArray[0], { callbackParent: this.onChildChanged })}
+        <div className="col-sm-8">
+          {twitchArr.map((child, i) => {
+            return React.cloneElement(child, { twitchCount: this.twitchCount(), streamNo: i, streamName: this.state["twitch_" + i] })
+          })}
+        </div>
+        {React.cloneElement(childArray[childArray.length-1], { streamName: this.state.name })}
       </div>
     );
   }
@@ -66,8 +63,10 @@ document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
     <Container>
       <LeftNav/>
-      <Twitch className="twitch_0" streamName='sheriffeli' />
-      <Twitch className="twitch_1" streamName='greekgodx' />
+      <Twitch className="twitch_0" />
+      <Twitch className="twitch_1" />
+      <Twitch className="twitch_2" />
+      <Twitch className="twitch_3" />
       <RightNav/>
     </Container>,
     document.getElementById("mainContainer")
