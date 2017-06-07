@@ -21,39 +21,18 @@
 .twitchFrame_short {
 	width: 100%;
 	height: 450px;
+
+    text-align: center;
+    float: left;
+    margin: 0;
+    margin-right: -100px;
+    padding: 0;
+}
+iframe {
+    border:0 none;
 }
 
-.twitchFrame_0_0 {
-	width: 100%;
-	height: 900px;
-}
-
-.twitchFrame_0_1 {
-	width: 100%;
-	height: 900px;
-}
-
-.twitchFrame_0_2 {
-	width: 100%;
-	height: 450px;
-}
-
-.twitchFrame_1_2 {
-	width: 100%;
-	height: 450px;
-}
-
-.twitchFrame_0_3 {
-	width: 100%;
-	height: 450px;
-}
-
-.twitchFrame_1_3 {
-	width: 100%;
-	height: 450px;
-}
-
-.twitchFrame_2_3 {
-	width: 100%;
-	height: 450px;
+.nopadding {
+	margin: 0;
+    padding: 0;
 }
