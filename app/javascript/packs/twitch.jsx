@@ -14,7 +14,19 @@ export default class Twitch extends React.Component {
     this.state={name:this.props.streamName};
   }
   render() {
-    // if (this.props.streamNo < this.props.twitchCount) {
+    if (this.props.streamNo < this.props.twitchCount || (this.props.streamNo == 0 && this.props.twitchCount == 0)) {
+      return(
+        <iframe
+          className={'twitchFrame_'+ this.props.streamNo + '_' + this.props.twitchCount}
+          src={"http://player.twitch.tv/?channel="+this.props.streamName}
+          scrolling="true"
+          >
+        </iframe>
+    )}
+    return null
+
+
+
     if (this.props.streamNo == 0){
       if (this.props.twitchCount == 0 || this.props.twitchCount == 1) {
         return (
@@ -63,35 +75,6 @@ export default class Twitch extends React.Component {
         // if three or four stream
       // if stream 3
         // if four stream
-
-      // return (
-      //   <div className={"col-md-8 " + this.props.className}>
-      //     <div className='row'>
-      //       <iframe
-      //         className='twitchFrame'
-      //         src={"http://player.twitch.tv/?channel="+this.props.streamName}
-      //         scrolling="true"
-      //         >
-      //       </iframe>
-      //     </div>
-      //   </div>)
-
-    // } else {
-      // if zero streams
-      // return null
-      // return (
-      //   <div className={"col-md-8 " + this.props.className}>
-      //     <div className='row'>
-      //       <iframe
-      //         className='twitchFrame'
-      //         src={"http://player.twitch.tv/?channel="+this.props.streamName}
-      //         scrolling="true"
-      //         >
-      //       </iframe>
-      //     </div>
-      //   </div>)
-
-    // };
   }
 }
 

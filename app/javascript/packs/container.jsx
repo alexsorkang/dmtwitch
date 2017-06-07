@@ -45,15 +45,24 @@ export default class Container extends React.Component {
     const children = this.props.children
     const childArray = React.Children.toArray(children)
     const twitchArr = childArray.slice(1,-1)
+    const leftArr = twitchArr.slice(0,Math.floor(twitchArr.length/2))
+    const rightArr = twitchArr.slice(Math.floor(twitchArr.length/2))
     return (
       <div id="outerContainer" className="row">
         <div className="col-sm-2">
           {React.cloneElement(childArray[0], { callbackParent: this.onChildChanged })}
         </div>
         <div className="col-sm-8">
-          {twitchArr.map((child, i) => {
-            return React.cloneElement(child, { twitchCount: this.twitchCount(), streamNo: i, streamName: this.state["twitch_" + i] })
-          })}
+          <div className="row">
+            {leftArr.map((child, i) => {
+              return React.cloneElement(child, { twitchCount: this.twitchCount(), streamNo: i, streamName: this.state["twitch_" + i] })
+            })}
+          </div>
+          <div className="row">
+            {rightArr.map((child, i) => {
+              return React.cloneElement(child, { twitchCount: this.twitchCount(), streamNo: i+leftArr.length, streamName: this.state["twitch_" + (i+leftArr.length)] })
+            })}
+          </div>
         </div>
         <div className="col-sm-2">
           {React.cloneElement(childArray[childArray.length-1], { streamName: this.state.name })}

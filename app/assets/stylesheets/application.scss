@@ -13,6 +13,16 @@
  */
 @import "bootstrap";
 
+.twitchFrame_tall {
+	width: 100%;
+	height: 900px;
+}
+
+.twitchFrame_short {
+	width: 100%;
+	height: 450px;
+}
+
 .twitchFrame_0_0 {
 	width: 100%;
 	height: 900px;
@@ -29,6 +39,21 @@
 }
 
 .twitchFrame_1_2 {
+	width: 100%;
+	height: 450px;
+}
+
+.twitchFrame_0_3 {
+	width: 100%;
+	height: 450px;
+}
+
+.twitchFrame_1_3 {
+	width: 100%;
+	height: 450px;
+}
+
+.twitchFrame_2_3 {
 	width: 100%;
 	height: 450px;
 }
