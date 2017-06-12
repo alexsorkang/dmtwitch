@@ -25,7 +25,7 @@ export default class Twitch extends React.Component {
             <iframe
               className={twitchClass}
               src={"http://player.twitch.tv/?channel="+this.props.streamName}
-              scrolling="true"
+              allowfullscreen='true'
               >
             </iframe>
           </div>
@@ -36,7 +36,7 @@ export default class Twitch extends React.Component {
             <iframe
               className={twitchClass}
               src={"http://player.twitch.tv/?channel="+this.props.streamName}
-              scrolling="true"
+              allowfullscreen='true'
               >
             </iframe>
           </div>

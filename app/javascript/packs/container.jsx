@@ -46,15 +46,24 @@ export default class Container extends React.Component {
     // <div className="col-sm-2">
       // {React.cloneElement(childArray[childArray.length-1], { streamName: this.state.name })}
     // </div>
+
+
     const children = this.props.children
     const childArray = React.Children.toArray(children)
-    const twitchArr = childArray.slice(1,-1)
+    const formArr = childArray.slice(0,4)
+    const twitchArr = childArray.slice(4,-1)
     const leftArr = twitchArr.slice(0,Math.floor(twitchArr.length/2))
     const rightArr = twitchArr.slice(Math.floor(twitchArr.length/2))
     return (
       <div id="outerContainer" className="row">
         <div className="col-sm-2">
-          {React.cloneElement(childArray[0], { callbackParent: this.onChildChanged })}
+
+          {formArr.map((child,i) => {
+            {console.log(i)
+            return React.cloneElement(child, {id: 'twitch_'+i, callbackParent: this.onChildChanged})
+            }
+          })}
+
         </div>
         <div className="col-sm-10">
           <div className="row">
@@ -76,6 +85,9 @@ export default class Container extends React.Component {
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
     <Container>
+      <LeftNav/>
+      <LeftNav/>
+      <LeftNav/>
       <LeftNav/>
       <Twitch className="twitch_0" />
       <Twitch className="twitch_1" />
