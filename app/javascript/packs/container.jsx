@@ -59,7 +59,6 @@ export default class Container extends React.Component {
         <div className="col-sm-2">
 
           {formArr.map((child,i) => {
-            {console.log(i)
             return React.cloneElement(child, {id: 'twitch_'+i, callbackParent: this.onChildChanged})
             }
           })}
