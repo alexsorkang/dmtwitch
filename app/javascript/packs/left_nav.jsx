@@ -11,10 +11,7 @@ export default class LeftNav extends React.Component {
     let obj = {}
     obj[this.props.id] = ''
     this.state = obj
-    console.log(this.state)
-    // this.state={twitch_0:'',twitch_1:'',twitch_2:'',twitch_3:''};
     this.handleChange = this.handleChange.bind(this);
-    // console.log(this.props.id)
     this.delayCall = _.debounce(function(newName) {
       let obj = {}
       obj[this.props.id] = newName.target.value
@@ -29,10 +26,8 @@ export default class LeftNav extends React.Component {
     this.delayCall(newName);
   }
   render() {
-    return (
-      <div className="form-group">
-        <input id={this.props.id} className="form-control" type="text" value={this.state[this.props.id]} onChange={this.handleChange} />
-      </div>
+    return (  
+      <input id={this.props.id} className="form-control" type="text" value={this.state[this.props.id]} onChange={this.handleChange} />
     );
   }
 }

@@ -23,16 +23,84 @@
 	height: 450px;
 
     text-align: center;
-    float: left;
     margin: 0;
-    margin-right: -100px;
     padding: 0;
 }
 iframe {
     border:0 none;
+    padding: 0;
+    margin: 0;
+    float: left;
 }
 
 .nopadding {
+    border: 0;
 	margin: 0;
     padding: 0;
+}
+
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 36px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #373a47;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #373a47;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #551a8b;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #551a8b;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: white;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
 }
